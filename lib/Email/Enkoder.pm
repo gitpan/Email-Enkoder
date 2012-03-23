@@ -6,7 +6,7 @@ use 5.010;
 use Sub::Exporter::Simple qw' enkode enkode_mail ';
 use utf8;
 
-our $VERSION = '1.120830'; # VERSION
+our $VERSION = '1.120831'; # VERSION
 
 # ABSTRACT: obfuscate email or html with randomized javascript
 
@@ -68,12 +68,13 @@ my $default_enkoders = [
 
 
 sub enkode_mail {
-    my ( $email, $link_text, $options ) = @_;
+    my ( $email, $options ) = @_;
 
+    $options->{link_text} //= $email;
     $_ = defined $_ ? qq| $_|         : '' for $options->{link_attributes};
     $_ = defined $_ ? qq|?subject=$_| : '' for $options->{subject};
 
-    $email = qq|<a href="mailto:$email$options->{subject}"$options->{link_attributes}>$link_text</a>|;
+    $email = qq|<a href="mailto:$email$options->{subject}"$options->{link_attributes}>$options->{link_text}</a>|;
     my $link = enkode( $email, $options );
 
     return $link;
@@ -175,7 +176,7 @@ Email::Enkoder - obfuscate email or html with randomized javascript
 
 =head1 VERSION
 
-version 1.120830
+version 1.120831
 
 =head1 FUNCTIONS
 

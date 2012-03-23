@@ -30,7 +30,7 @@ no_index:
 provides:
   Email::Enkoder:
     file: lib/Email/Enkoder.pm
-    version: 1.120830
+    version: 1.120831
 requires:
   Sub::Exporter::Simple: 0
   perl: 5.010
@@ -40,4 +40,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Email-Enkoder
   homepage: https://github.com/wchristian/email-enkoder
   repository: https://github.com/wchristian/email-enkoder.git
-version: 1.120830
+version: 1.120831

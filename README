@@ -2,7 +2,7 @@ NAME
     Email::Enkoder - obfuscate email or html with randomized javascript
 
 VERSION
-    version 1.120830
+    version 1.120831
 
 FUNCTIONS
   enkode_mail
